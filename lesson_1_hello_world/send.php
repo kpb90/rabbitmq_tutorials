@@ -4,6 +4,18 @@ require_once __DIR__ . '/vendor/autoload.php';
 use PhpAmqpLib\Connection\AMQPConnection;
 use PhpAmqpLib\Message\AMQPMessage;
 
+/*
+	Схема работы данного примера: 
+	
+	Producer:
+		Подключается к брокеру, создает очередь с определенным именем (routing_key), если она не существует.
+		Кладем сообщение в созданную очередь.
+	Consumer:
+		Подключается к брокеру, создает очередь с определенным именем (если не существует).
+		Слушает очередь с заданным именем
+	
+*/
+
 // Подключаемся к броккеру сообщений
 $connection = new AMQPConnection('localhost', 5672, 'guest', 'guest');
 $channel = $connection->channel();
