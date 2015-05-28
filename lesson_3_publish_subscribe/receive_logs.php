@@ -14,11 +14,6 @@ $channel = $connection->channel();
 
 	sudo rabbitmqctl list_exchanges - посмотреть все точки доступа
 
-	По умолчанию или безымянная точка доступа: сообщение направляется в очередь, 
-	идентифицированную через ключ “routing_key” - третий параметр basic_publish
-
-	$channel->exchange_declare('logs', 'fanout', false, false, false);
-	$channel->basic_publish($msg, 'logs');
 */
 $channel->exchange_declare('logs', 'fanout', false, false, false);
 

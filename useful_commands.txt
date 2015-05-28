@@ -1,0 +1,4 @@
+rabbitmqctl list_queues - мониторинг очередей. Очереди, которые существуют в RabbitMQ на данный момент.
+rabbitmqctl messages_unacknowledged - все неподтвержденные сообщения (messages_unacknowledged).
+rabbitmqctl list_exchanges - посмотреть все exchanges
+rabbitmqctl list_bindings - посмотреть все bindings
